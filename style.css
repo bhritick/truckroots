@@ -1,0 +1,2340 @@
+/*
+* Truck Root | template
+* Version: 01,
+
+===========================================
+    
+    All include section: 
+
+    01. Google fonts
+    02. Basic css
+    03. Preloadss
+    04. header area start
+    05. home area start
+    06. shop truck start
+    07. best driver start
+    08. footer area start
+    09. hire driver start
+    10. hire drive start
+    11. resource start    
+    12. resource start
+    13. Shop Trucks start
+    14. Shop Truck details start
+    15. sign up start
+    16. drive portfolio start
+    17. Seller Information start
+    18. auctions area start
+    19. what type area start
+    20. auction provide area start
+    21. return top area start
+
+===========================================
+
+
+*/
+
+
+/*======================
+   01. Google fonts
+========================*/
+
+@font-face {
+    font-family: helvetica-regular;
+    src: url(fonts/helvetica.ttf);
+}
+
+@font-face {
+    font-family: helvetica-bold;
+    src: url(fonts/helvetica-bold.ttf);
+}
+
+
+/*======================
+   02. Basic css
+========================*/
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+strong,
+i,
+ol,
+ul,
+li,
+form,
+label,
+footer,
+header,
+menu,
+nav,
+section {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff;
+    font-size: 14px;
+    line-height: 26px;
+    color: #252525;
+    font-family: helvetica-regular;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 0;
+}
+
+
+/*======================
+   03. Preloader css
+========================*/
+
+#preloader {
+    position: fixed;
+    background: #fff;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    height: 100vh;
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.loader3 {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0px;
+    text-align: left;
+}
+
+.loader3 span {
+    position: absolute;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: #0B3E3A;
+    -webkit-animation: loader3 1.5s linear infinite;
+    animation: loader3 1.5s linear infinite;
+}
+
+.loader3 span:last-child {
+    animation-delay: -0.9s;
+    -webkit-animation-delay: -0.9s;
+}
+
+@keyframes loader3 {
+    0% {
+        -webkit-transform: scale(0, 0);
+        transform: scale(0, 0);
+        opacity: 0.8;
+    }
+    100% {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes loader3 {
+    0% {
+        -webkit-transform: scale(0, 0);
+        opacity: 0.8;
+    }
+    100% {
+        -webkit-transform: scale(1, 1);
+        opacity: 0;
+    }
+}
+
+.hamburger-menu {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    display: none;
+    z-index: 999;
+    top: -15px;
+}
+
+.hamburger-menu span {
+    background: #ffffff;
+    width: 30px;
+    height: 3px;
+    display: block;
+    margin: 5px 0;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu:hover .line-top {
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+.hamburger-menu:hover .line-bottom {
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+.hamburger-menu:hover .line-top.current,
+.hamburger-menu:hover .line-bottom.current {
+    -webkit-transform: 0;
+    -ms-transform: 0;
+    transform: 0;
+}
+
+.hamburger-menu .line-top.current {
+    -webkit-transform: translateY(200%) rotate(135deg);
+    -ms-transform: translateY(200%) rotate(135deg);
+    transform: translateY(200%) rotate(135deg);
+}
+
+.hamburger-menu .line-center.current {
+    opacity: 0;
+}
+
+.hamburger-menu .line-bottom.current {
+    -webkit-transform: translateY(-325%) rotate(-135deg);
+    -ms-transform: translateY(-325%) rotate(-135deg);
+    transform: translateY(-325%) rotate(-135deg);
+}
+
+
+/*======================
+   04. header area start
+========================*/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 85px;
+    background-color: #1f1f1f;
+}
+
+header.sticky {
+    -webkit-box-shadow: 1px 1px 28px rgba(0, 0, 0, 0.16);
+    box-shadow: 1px 1px 28px rgba(0, 0, 0, 0.16);
+}
+
+.logo a {
+    display: inline-block;
+}
+
+.mobile-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.menu li {
+    position: relative;
+    display: inline-block;
+}
+
+.menu li:hover .sub-menu {
+    visibility: visible;
+    opacity: 1;
+    top: 110px;
+}
+
+.menu li a {
+    text-transform: capitalize;
+    padding: 35px 18px;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    color: #ffffff;
+}
+
+.menu li a:last-child {
+    padding-right: 23px;
+}
+
+.menu li:hover>a,
+.active {
+    color: #ffc222 !important;
+}
+
+.mobile-menu .make-btn {
+    margin-left: 30px;
+}
+
+.mobile-menu .login-btn {
+    background-color: #181818;
+    border: transparent;
+}
+
+.menu li:hover .sub-menu {
+    visibility: visible;
+    opacity: 1;
+    top: 80px;
+}
+
+.mobile-menu li a i {
+    display: none;
+}
+
+.sub-menu {
+    width: 180px;
+    position: absolute;
+    text-align: left;
+    background: #191919;
+    padding: 35px 0;
+    border-radius: 0;
+    top: 80px;
+    right: auto;
+    left: 20px;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    text-align: center;
+}
+
+.sub-menu::before {
+    content: "";
+    position: absolute;
+    top: -19px;
+    left: 32px;
+    width: 20px;
+    height: 20px;
+    -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background: #191919;
+}
+
+.sub-menu li {
+    line-height: 45px !important;
+    display: block !important;
+}
+
+.sub-menu li a {
+    padding: 0 !important;
+    display: block;
+    line-height: 52px !important;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.67);
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+    z-index: 9;
+}
+
+.overlay-add {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*======================
+   05. home area start
+========================*/
+
+.home-wrapper {
+    height: 810px;
+    padding-top: 85px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+.home-wrapper h1 {
+    font-size: 50px;
+    line-height: 75px;
+    color: #ffffff;
+    font-family: helvetica-bold;
+}
+
+.home-wrapper h1 span {
+    color: #ffc222;
+}
+
+.home-wrapper p {
+    font-size: 16px;
+    line-height: 32px;
+    color: #ffffff;
+    margin-top: 50px;
+}
+
+.home-wrapper .make-btn {
+    padding: 23px 60px;
+    border-radius: 35px;
+    -webkit-filter: drop-shadow(0px 34px 28.5px rgba(68, 50, 2, 0.4));
+    filter: drop-shadow(0px 34px 28.5px rgba(68, 50, 2, 0.4));
+    background-color: #ffc222;
+    color: #242327;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-top: 50px;
+}
+
+.home-wrapper .make-btn:before {
+    border-radius: 35px;
+}
+
+
+/*======================
+   06. shop truck start
+========================*/
+
+.shoptruck-wrapper {
+    padding: 125px 0 225px 0;
+}
+
+.head-one {
+    font-size: 50px;
+    line-height: 95px;
+    color: #1f1f1f;
+    font-family: helvetica-bold;
+}
+
+.form-box {
+    border-radius: 20px;
+    -webkit-filter: drop-shadow(0px 24px 28.5px rgba(113, 113, 113, 0.15));
+    filter: drop-shadow(0px 24px 28.5px rgba(113, 113, 113, 0.15));
+    background-color: #ffffff;
+    padding: 10px 40px 40px 40px;
+}
+
+.form-box form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.input-info,
+.select-info {
+    width: 525px;
+    height: 70px;
+    border-radius: 35px;
+    border: 1px solid #888888;
+    padding-left: 35px;
+    font-size: 20px;
+    color: #929292;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+
+.input-info:placeholder {
+    color: #929292;
+}
+
+.select-info,
+.form-box .make-btn {
+    width: 215px !important;
+    height: 70px;
+}
+
+.select-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-image: url(../img/select-icon.png);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 25px) center;
+    -webkit-appearance: none;
+}
+
+.form-box .make-btn {
+    border-radius: 35px;
+    border: 1px solid transparent;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: #242327;
+}
+
+.form-box .make-btn:before {
+    border-radius: 35px;
+}
+
+.about-us-img {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.shoptruck-left {
+    margin-top: 200px;
+}
+
+.shoptruck-left h2 {
+    font-size: 50px;
+    color: #ffffff;
+    border-radius: 20px;
+    background-color: #ffc222;
+    padding: 35px 145px;
+    font-family: helvetica-bold;
+    text-transform: capitalize;
+    position: absolute;
+    right: 5px;
+    bottom: -6%;
+}
+
+.shoptruck-left h2 span {
+    color: #252525;
+    margin-left: 5px;
+}
+
+.head-two {
+    font-size: 35px;
+    line-height: 50px;
+    color: #252525;
+    font-family: helvetica-bold;
+}
+
+.shoptruck-right {
+    margin-top: 200px;
+}
+
+.shoptruck-right p {
+    font-size: 16px;
+    line-height: 35px;
+    color: #252525;
+    margin-top: 40px;
+}
+
+.shoptruck-right .more-btn {
+    padding-top: 80px;
+}
+
+.more-btn {
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #242327;
+    font-family: helvetica-bold;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.more-btn:hover::before {
+    width: 0;
+}
+
+.more-btn::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #ffc121;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.more-btn:hover {
+    color: #242327;
+}
+
+.more-btn img {
+    margin-left: 25px;
+}
+
+
+/*======================
+   07. best driver start
+========================*/
+
+.driver-wrapper {
+    padding: 290px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.driver-head {
+    font-size: 65px;
+    line-height: 90px;
+    color: #b1afaa;
+    font-family: helvetica-bold;
+}
+
+.driver-c1 {
+    color: #605f5e;
+}
+
+.driver-c2 {
+    color: #ffc222;
+}
+
+.driver-head-box .more-btn {
+    font-size: 20px;
+    color: #b1afaa;
+    text-transform: capitalize;
+    margin-top: 110px;
+}
+
+.driver-box {
+    height: 460px;
+    border-radius: 20px;
+    overflow: hidden;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    border: 1px solid transparent;
+}
+
+.driver-box:hover {
+    border: 1px solid #ffc222;
+}
+
+.driver-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #1f1f1f;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.702;
+    z-index: 1;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+.driver-box:hover::before {
+    opacity: 0.902;
+}
+
+.driver-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.driver-box:hover .driver-text {
+    bottom: 0;
+}
+
+.driver-text {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    z-index: 11;
+    overflow: hidden;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    bottom: -54%;
+}
+
+.driver-text h2 {
+    font-size: 28px;
+    line-height: 50px;
+    color: #ffffff;
+    font-family: helvetica-bold;
+}
+
+.driver-text a,
+.driver-text p {
+    color: #ffffff;
+    display: block;
+}
+
+.driver-sub-text {
+    border-top: 1px solid #7b7b7b;
+    padding: 10px 0 0 0;
+    margin-top: 20px;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+.driver-sub-text h3 {
+    font-size: 20px;
+    line-height: 36px;
+    color: #fffdfd;
+    margin-bottom: 5px;
+}
+
+.engage-btn {
+    background: #ffc121;
+    height: 50px;
+    font-size: 20px !important;
+    color: #121316 !important;
+    font-family: helvetica-bold;
+    border-radius: 18px;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 30px;
+    border: 1px solid transparent;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.engage-btn:hover {
+    border: 1px solid #ffc121;
+    color: #ffc121 !important;
+    background: transparent;
+}
+
+
+/*======================
+   08. footer area start
+========================*/
+
+footer {
+    background-color: #292929;
+    padding: 30px 0 30px 0;
+}
+
+.footer-left-shape {
+    top: 0;
+    left: 0;
+}
+
+.footer-bottom-shape {
+    right: 0;
+    bottom: 0;
+}
+
+.footer-logo {
+    margin-top: 80px;
+}
+
+.footer-box {
+    margin-left: 30px;
+}
+
+.head-four {
+    font-size: 20px;
+    line-height: 28px;
+    color: #979797;
+}
+
+.footer-ul-first li {
+    width: 50%;
+    float: left;
+}
+
+.footer-ul li {
+    line-height: 30px;
+}
+
+.footer-ul li a {
+    color: #ffffff;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.footer-ul li a:hover {
+    color: #ffc222;
+}
+
+
+/*======================
+   09. hire driver start
+========================*/
+
+.hiredriver-wrapper {
+    padding-top: 85px;
+}
+
+.head-three {
+    font-size: 32px;
+    line-height: 45px;
+    color: #000000;
+    font-family: helvetica-bold;
+}
+
+.hiredriver-wrapper .head-three {
+    padding: 60px 0;
+}
+
+.hiredriver-wrapper .form-input1 {
+    width: 460px;
+}
+
+.hiredriver-wrapper .form-input2,
+.shoptruck-wrapper .form-input2 {
+    width: 280px !important;
+}
+
+.hiredriver-wrapper .form-input3 {
+    width: 235px !important;
+}
+
+.result-para {
+    color: #000000;
+}
+
+.sort-search {
+    text-align: right;
+}
+
+.sort-search label {
+    color: #0f141c;
+    margin-right: 20px;
+}
+
+.sort-search select {
+    padding: 0px 20px;
+    color: #857e7e;
+    border-radius: 6px;
+    border: 1px solid #c9c5c5;
+    background-image: url(../img/sort-select-icon.png);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 8px) center;
+    -webkit-appearance: none;
+    height: 40px;
+}
+
+.driver-directory-box {
+    border-radius: 20px;
+    -webkit-filter: drop-shadow(0px 15px 12.5px rgba(113, 113, 113, 0.15));
+    filter: drop-shadow(0px 15px 12.5px rgba(113, 113, 113, 0.15));
+    background-color: #ffffff;
+    overflow: hidden;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.driver-directory-box:hover {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+.driver-directory-img {
+    height: 340px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.driver-directory-img-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 0 10px 30px;
+}
+
+.driver-directory-head {
+    font-size: 24px;
+    line-height: 26px;
+    font-family: helvetica-bold;
+}
+
+.driver-directory-img-text h2 {
+    color: #ffc222;
+    margin-bottom: 10px;
+}
+
+.driver-directory-sub-box {
+    padding: 20px;
+}
+
+.driver-directory-sub-box h3 {
+    color: #857e7e;
+    font-size: 18px;
+}
+
+.driver-directory-sub-last {
+    border-top: 1px solid #d6d3d3;
+    padding-top: 15px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.driver-directory-sub-last h4 {
+    font-size: 16px;
+    line-height: 20px;
+    color: #040812;
+    font-family: helvetica-bold;
+}
+
+.driver-directory-sub-last p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #857e7e;
+    margin: 10px 0 45px 0;
+}
+
+.driver-directory-sub-last a {
+    font-size: 14px;
+    line-height: 20px;
+    color: #8b8484;
+    border: 1px solid #8b8484;
+    padding: 10px;
+    border-radius: 6px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 45%;
+    float: left;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.driver-directory-sub-last a:hover {
+    background: #ffc222;
+    color: #000000;
+    border: 1px solid transparent;
+}
+
+.load-btn {
+    font-size: 14px;
+    line-height: 20px;
+    color: #838489;
+    height: 40px;
+    border-radius: 19px;
+    background-color: #ffffff;
+    border: 1px solid #838389;
+    padding: 5px 35px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-top: 50px;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.load-btn:hover {
+    background: #ffc222;
+    color: #000000;
+    border: 1px solid transparent;
+}
+
+
+/*======================
+   10. hire drive start
+========================*/
+
+.hiredrive-wrapper {
+    padding: 0 0 80px 0;
+}
+
+.hiredrive-wrapper .head-one {
+    font-family: helvetica-regular;
+    line-height: 60px;
+    text-transform: uppercase;
+}
+
+.hiredrive-wrapper .head-one span {
+    font-family: helvetica-bold;
+}
+
+.hiredrive-head p {
+    font-size: 18px;
+    line-height: 28px;
+    color: #000000;
+    margin-top: 50px;
+}
+
+.hiredrive-box {
+    padding: 60px 240px;
+    background-color: #000000;
+    border-radius: 15px 0 0 0;
+}
+
+.hiredrive-box label {
+    font-size: 24px;
+    letter-spacing: 2px;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: #ffffff;
+    display: block;
+}
+
+.hiredrive-box input,
+.hiredrive-select {
+    background: transparent;
+    width: 100%;
+    border: transparent;
+    border-bottom: 4px solid #ffffff;
+    font-size: 18px;
+    color: #aaa6a6;
+    padding-bottom: 10px;
+}
+
+.hiredrive-select {
+    background-image: url(../img/social-select-icon.png);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 8px) center;
+    -webkit-appearance: none;
+}
+
+.hiredrive-file {
+    border: 1px solid #d4d2d2 !important;
+    padding: 5px 0 5px 15px;
+}
+
+.hiredrive-box .make-btn {
+    padding: 12px 30px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    font-family: helvetica-regular;
+    border-radius: 19px;
+    margin-top: 30px;
+}
+
+.hiredrive-box .make-btn:before {
+    border-radius: 17px;
+}
+
+.hiredrive-box .make-btn i {
+    margin-left: 5px;
+}
+
+
+/*======================
+   11. resource start
+========================*/
+
+.resource-wrapper {
+    padding-bottom: 50px;
+}
+
+.resource-wrapper .head-three {
+    text-transform: uppercase;
+}
+
+.custom-tab .nav {
+    padding-left: 150px;
+}
+
+.custom-tab ul li a {
+    font-size: 24px;
+    color: #292929;
+    padding: 0px 7px 10px 7px;
+    margin: 0 10px;
+    border-bottom: 6px solid transparent;
+}
+
+.custom-tab ul li a.active {
+    border-bottom: 6px solid #ffd76e !important;
+}
+
+.custom-tab .nav-item.show .nav-link,
+.custom-tab .nav-link.active {
+    background-color: transparent;
+    border-color: transparent transparent transparent;
+    border-bottom: 6px solid transparent;
+}
+
+.resourc-box {
+    margin-top: 60px;
+}
+
+.resourc-box:hover .resource-img {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+.resource-img {
+    border-radius: 15px 0 0 0;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    height: 342px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.resourc-box h2 {
+    font-size: 24px;
+    line-height: 30px;
+    color: #292929;
+    font-family: helvetica-bold;
+}
+
+.resourc-box h2 a {
+    color: #292929;
+}
+
+.read-more {
+    font-size: 14px;
+    color: #292929;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.read-more i {
+    margin-left: 5px;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.read-more:hover i {
+    color: #ffc222;
+}
+
+.read-more:hover {
+    color: #ffc222;
+}
+
+
+/*======================
+   12. resource start
+========================*/
+
+.modal-popup {
+    text-align: center;
+}
+
+.modal-popup .modal-content {
+    border: 1px solid transparent;
+    padding: 65px 35px;
+}
+
+.modal-popup .modal-content .close {
+    position: absolute;
+    right: -20px;
+    top: -55px;
+}
+
+.modal-popup .modal-content img {
+    width: 80px;
+}
+
+.modal-popup .modal-content h2 {
+    font-size: 30px;
+    font-family: helvetica-bold;
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+
+
+/*======================
+   13. Shop Trucks start
+========================*/
+
+.list-truck-wrapper .head-four {
+    text-transform: uppercase;
+    color: #000000;
+    font-family: helvetica-bold;
+}
+
+.list-truck-wrapper .custom-tab {
+    margin-right: 70px;
+}
+
+.list-truck-wrapper .custom-tab ul li a {
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    border-bottom: 5px solid transparent;
+    padding: 0px 7px 7px 7px;
+    margin: 12px 10px 0 10px;
+}
+
+.list-truck-wrapper .custom-tab ul li a.active {
+    border-bottom: 5px solid #ffd76e !important;
+}
+
+.list-truck-box {
+    border-radius: 20px;
+    -webkit-filter: drop-shadow(0px 15px 12.5px rgba(113, 113, 113, 0.15));
+    filter: drop-shadow(0px 15px 12.5px rgba(113, 113, 113, 0.15));
+    background-color: #ffffff;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    overflow: hidden;
+}
+
+.list-truck-box:hover {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+.shop-img {
+    height: 340px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.list-truck-box .head-four {
+    background-color: rgba(0, 0, 0, 0.52);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 30px;
+    text-transform: capitalize;
+}
+
+.list-truck-box .head-four span {
+    color: #ffc222;
+    font-size: 23px;
+}
+
+.list-truck-content {
+    padding: 25px 20px;
+}
+
+.list-defult-para {
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    font-family: helvetica-bold;
+    margin-bottom: 15px;
+}
+
+.list-truck-content p span {
+    color: #857e7e;
+}
+
+.list-truck-content h2 {
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    font-family: helvetica-bold;
+}
+
+.list-truck-content h2 span {
+    color: #857e7e;
+    font-size: 32px;
+}
+
+.list-truck-sub {
+    border-top: 1px solid #d6d3d3;
+    padding-top: 20px;
+}
+
+.list-truck-sub h4 {
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    font-family: helvetica-bold;
+}
+
+.list-truck-sub p {
+    font-size: 16px;
+    line-height: 20px;
+    color: #857e7e;
+    margin: 10px 0 20px 0;
+}
+
+.details-btn {
+    font-size: 14px;
+    line-height: 20px;
+    color: #8b8484;
+    height: 35px;
+    padding: 4px 45px;
+    border-radius: 6px;
+    border: 1px solid #888888;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.details-btn:hover {
+    background: #ffc222;
+    color: #000000;
+    border: 1px solid transparent;
+}
+
+
+/*=============================
+   14. Shop Truck details start
+===============================*/
+
+.shoptruck-details-wrapper,
+.seller-truck-wrapper {
+    padding: 85px 0 60px 0;
+}
+
+.back-left {
+    font-size: 20px;
+    color: #000000;
+    text-transform: capitalize;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    margin-top: 25px;
+    display: inline-block;
+}
+
+.back-left:hover {
+    color: #ffc222;
+}
+
+.back-left i {
+    margin-right: 15px;
+}
+
+.shoptruck-active img {
+    margin-top: 50px;
+}
+
+.shop-details-img {
+    border-radius: 20px;
+    -webkit-filter: drop-shadow(0px 10px 12px rgba(68, 50, 2, 0.1));
+    filter: drop-shadow(0px 10px 12px rgba(68, 50, 2, 0.1));
+    background-color: #000000;
+    overflow: hidden;
+}
+
+.shoptruck-mini-active .slick-arrow {
+    width: 40px;
+    height: 40px;
+    border: transparent;
+    background: #ffc222;
+    border-radius: 50%;
+    font-size: 15px;
+    position: absolute;
+    z-index: 1;
+    top: 30%;
+}
+
+.shoptruck-mini-active .slick-next {
+    right: -4%;
+}
+
+.shoptruck-mini-active .slick-prev {
+    left: -4%;
+}
+
+.shoptruck-mini-active .slick-slide {
+    padding: 10px 10px 0 0;
+}
+
+.shoptruck-mini-active img {
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.shoptruck-mini-active .slick-slide.slick-current.slick-active.slick-center img {
+    border: 2px solid #ffc222;
+}
+
+.shoptruck-detail-box {
+    margin-top: 50px;
+}
+
+.shoptruck-detail-box h2 {
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+    font-family: helvetica-bold;
+}
+
+.shoptruck-custom-para p {
+    font-size: 16px;
+    line-height: 36px;
+    color: #000000;
+    font-family: helvetica-bold;
+}
+
+.shoptruck-custom-para p span {
+    color: #857e7e;
+}
+
+.shoptruck-custom-para-padd {
+    margin-left: 200px;
+}
+
+.shoptruck-price-text {
+    font-size: 32px;
+    line-height: 40px;
+    color: #857e7e;
+    font-family: helvetica-bold;
+    margin-top: 10px;
+}
+
+.shoptruck-price-text span {
+    font-size: 16px;
+    color: #000000;
+}
+
+.descrip-text {
+    letter-spacing: 1px;
+}
+
+.shoptruck-para {
+    font-size: 20px;
+    line-height: 32px;
+    color: #000000;
+}
+
+.shoptruck-detail-box .make-btn {
+    font-size: 20px;
+    color: #000000;
+    height: 70px;
+    padding: 5px 70px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.shoptruck-detail-box .make-btn:before {
+    border-radius: 30px;
+}
+
+
+/*=============================
+   15. sign up start
+===============================*/
+
+.signup-wrapper {
+    height: 1024px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.signup-wrap {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.signup-logo {
+    text-align: center;
+    display: block;
+    margin-bottom: 60px;
+}
+
+.signup-box {
+    padding: 35px 55px;
+    background: #ffffff;
+    width: 450px;
+    border-radius: 55px;
+    -webkit-filter: drop-shadow(0px 11px 12.5px rgba(113, 113, 113, 0.48));
+    filter: drop-shadow(0px 11px 12.5px rgba(113, 113, 113, 0.48));
+    border-top: 6px solid #ffc222;
+    border-left: 6px solid #ffc222;
+    border-right: 6px solid #ffc222;
+    border-bottom: 20px solid #ffc222;
+}
+
+.signup-box h2 {
+    font-size: 32px;
+    line-height: 48px;
+    color: #1f1f1f;
+    font-family: helvetica-bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sign-info input {
+    height: 60px;
+    border-radius: 30px;
+    background-color: #fcfdfe;
+    border: 2px solid #d7d6d6;
+    width: 100%;
+    padding-left: 55px;
+    color: #857e7e;
+}
+
+.sign-info input::-webkit-input-placeholder {
+    color: #857e7e;
+}
+
+.sign-info input::-moz-placeholder {
+    color: #857e7e;
+}
+
+.sign-info input:-ms-input-placeholder {
+    color: #857e7e;
+}
+
+.sign-info input::-ms-input-placeholder {
+    color: #857e7e;
+}
+
+.sign-info input::placeholder {
+    color: #857e7e;
+}
+
+.sign-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.sign-icon img {
+    width: 20px;
+}
+
+.logsign-btn {
+    height: 60px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 5px 40px;
+    border-radius: 30px;
+    -webkit-filter: drop-shadow(0px 11px 10.5px rgba(31, 31, 31, 0.11));
+    filter: drop-shadow(0px 11px 10.5px rgba(31, 31, 31, 0.11));
+    background-color: #ffc222;
+    font-size: 20px;
+    line-height: 48px;
+    color: #1f1f1f;
+    border: 2px solid transparent;
+    margin-top: 50px;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.logsign-btn:hover {
+    color: #1f1f1f;
+}
+
+.login-btn,
+.sign-btn:hover {
+    border: 2px solid #ffc222;
+    background: transparent;
+}
+
+.login-btn:hover {
+    background: #ffc222;
+}
+
+.login-box {
+    border-bottom: 40px solid #ffc222 !important;
+}
+
+.forget-text {
+    font-size: 16px;
+    line-height: 30px;
+    color: #000000;
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.forget-text:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.form-checkbox input {
+    font-size: 20px;
+    margin: 0 6px 0 0;
+    vertical-align: top;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-print-color-adjust: exact;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 29px;
+    height: 29px;
+    border-radius: 6px;
+    background-color: #fcfdfe;
+    border: 2px solid #d7d6d6;
+    cursor: pointer;
+}
+
+.form-checkbox input:checked[type="checkbox"] {
+    background-image: url(../img/download.svg);
+    background-color: #ffffff;
+}
+
+.form-checkbox input:checked {
+    border-color: #0d6efd;
+}
+
+.form-checkbox label {
+    font-size: 16px;
+    color: #1f1f1f;
+    cursor: pointer;
+}
+
+
+/*=============================
+   16. drive portfolio start
+===============================*/
+
+.driverportfolio-wrapper {
+    padding: 85px 0 70px 0;
+}
+
+.driverportfolio-wrapper .head-three {
+    margin-top: 55px;
+}
+
+.driverportfolio-box {
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 55px;
+    -webkit-box-shadow: 0px 15px 12.5px rgba(113, 113, 113, 0.15);
+    box-shadow: 0px 15px 12.5px rgba(113, 113, 113, 0.15);
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.driverportfolio-box:hover {
+    -webkit-box-shadow: 0px 15px 12.5px rgba(113, 113, 113, 0.45);
+    box-shadow: 0px 15px 12.5px rgba(113, 113, 113, 0.45);
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+.driverportfolio-box img {
+    border-radius: 20px;
+}
+
+.driverportfolio-content {
+    background-color: rgba(0, 0, 0, 0.43137254901960786);
+    padding: 35px 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    text-align: center;
+}
+
+.driverportfolio-content a {
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #000000;
+    font-size: 20px;
+    margin: 0 10px;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.driverportfolio-content a:hover {
+    background: #ffc222;
+}
+
+.driverportfolio-detail-box {
+    margin-top: 55px;
+}
+
+.driverportfolio-detail-box h2 {
+    font-size: 48px;
+    line-height: 50px;
+    color: #000000;
+    font-family: helvetica-bold;
+}
+
+.driverportfolio-icon a {
+    display: inline-block;
+    margin: 0px 3px 0 0;
+}
+
+.driverportfolio-para {
+    font-size: 20px;
+    line-height: 32px;
+    color: #000000;
+}
+
+.driverportfolio-link a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.driverportfolio-link a:hover {
+    color: #000000;
+}
+
+.driverportfolio-link a i {
+    font-size: 22px;
+    width: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.driverportfolio-detail-box .head-four {
+    color: #000000;
+    letter-spacing: 1px;
+    font-family: helvetica-bold;
+}
+
+.driverportfolio-ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.driverportfolio-ul li span {
+    background: #000000;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.driverportfolio-lastul {
+    margin-left: 95px;
+}
+
+.car-steering img {
+    margin-right: 10px;
+}
+
+.driverportfolio-detail-box .make-btn {
+    font-size: 24px;
+    color: #242327;
+    height: 70px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 5px 65px;
+    border-radius: 35px;
+}
+
+.driverportfolio-detail-box .make-btn:before {
+    border-radius: 35px;
+}
+
+
+/*=============================
+   17. Seller Information start
+===============================*/
+
+.seller-truck-wrapper .head-three {
+    margin-top: 55px;
+}
+
+.seller-truck-wrapper form {
+    margin-top: 50px;
+}
+
+.seller-truck-info label {
+    color: #000000;
+    font-family: helvetica-bold;
+    width: 210px;
+}
+
+.seller-truck-info select {
+    background-image: url(../img/seller-information-select.svg);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 17px) center;
+    -webkit-appearance: none;
+}
+
+.seller-truck-info select,
+.seller-truck-info input {
+    width: 330px;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid #888888;
+    color: #857e7e;
+    padding-left: 20px;
+    background-color: #ffffff;
+}
+
+.seller-truck-color input {
+    padding: 5px 20px 5px 20px;
+}
+
+.upload-form {
+    margin-left: 215px;
+}
+
+.hidden {
+    display: none;
+}
+
+.upload-form .box {
+    position: relative;
+    background: #ffffff;
+    width: 100%;
+}
+
+.upload-form .dropzone-desc {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #857e7e;
+}
+
+.upload-form .dropzone,
+.upload-form .dropzone:focus {
+    position: absolute;
+    outline: none !important;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.upload-form .dropzone-desc i {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.upload-form .dropzone-desc p {
+    line-height: 20px;
+}
+
+.browse-btn {
+    border-radius: 6px;
+    background-color: #1f1f1f;
+    border: 1px solid #686868;
+    width: 130px;
+    height: 40px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 10px auto 0 auto;
+    color: #ffffff;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+
+.image-format {
+    font-size: 12px;
+    color: #000000;
+    margin: 10px 0 20px 0;
+    line-height: 20px;
+}
+
+.upload-btn {
+    height: 40px;
+    border: transparent;
+    padding: 0 20px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #1f1f1f;
+    border-radius: 20px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    font-family: helvetica-regular;
+}
+
+.upload-btn:before {
+    border-radius: 20px;
+}
+
+.box-tools {
+    position: absolute;
+    right: 19%;
+    top: -5%;
+}
+
+.box-body img {
+    height: 200px;
+    width: auto;
+}
+
+.remove-preview {
+    background: #ff4b4b;
+    width: 30px;
+    height: 30px;
+    border: transparent;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 15px;
+}
+
+.upload-form .dropzone-wrapper {
+    border: 2px dashed #888888;
+    position: relative;
+    height: 200px;
+    width: 330px;
+    border-radius: 6px;
+}
+
+.upload-form .dropzone-wrapper:hover,
+.upload-form .dropzone-wrapper.dragover {
+    background: #ecf0f5;
+}
+
+.upload-form .preview-zone {
+    text-align: center;
+    width: 330px;
+    margin-top: 42px;
+}
+
+
+/*=============================
+   18. auctions area start
+===============================*/
+
+.auctions-wrapper .driver-directory-img-text h2 {
+    color: #000000;
+    margin-bottom: 30px;
+    font-size: 23px;
+}
+
+.auctions-wrapper .driver-directory-img-text a {
+    display: none;
+}
+
+.auctions-wrapper .driver-directory-sub-box h3 {
+    font-size: 16px;
+}
+
+.auctions-wrapper .driver-directory-sub-last a {
+    width: 100%;
+}
+
+
+/*=============================
+   19. what type area start
+===============================*/
+
+.whatype-wrapper {
+    padding-bottom: 80px;
+    overflow: hidden;
+}
+
+.whatype-ab {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.whatype-ab .head-three {
+    color: #fcfafa;
+    display: inline-block;
+    text-align: left;
+    line-height: 42px;
+    position: relative;
+}
+
+.whatype-ab .head-three::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: -20px;
+    width: 5px;
+    height: 70px;
+    background-color: #ffc222;
+}
+
+.whatype-ab .head-three span {
+    font-size: 28px;
+    font-family: helvetica-regular;
+}
+
+.whatype-wrap {
+    margin-top: -315px;
+}
+
+.whatype-box-second,
+.whatype-box-third {
+    margin-top: 100px;
+}
+
+.whatype-box-first .whatype-img {
+    border-radius: 0px 16px 0 0 !important;
+}
+
+.whatype-box-four .whatype-img {
+    border-radius: 16px 0 0 0 !important;
+}
+
+.whatype-box .whatype-img {
+    border-radius: 16px 16px 0 0;
+    height: 355px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.whatype-play {
+    width: 35px;
+    height: 35px;
+    border: 2px solid #ffc222;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #000000;
+    font-size: 9px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-right: 20px;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.whatype-play:hover {
+    color: #ffffff;
+    background: #ffc222;
+}
+
+.whatype-content {
+    padding: 15px 30px;
+    border-radius: 0 16px 0 0;
+    background: #ffffff;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+
+.whatype-content h3 {
+    font-size: 14px;
+    color: #292929;
+    font-family: helvetica-bold;
+}
+
+.whatype-content p {
+    font-size: 12px;
+    color: #525252;
+    line-height: 18px;
+}
+
+.whatype-last-content {
+    border-radius: 16px 0 0 0;
+    right: 0;
+    left: auto;
+}
+
+
+/*=============================
+   20. auction provide area start
+===============================*/
+
+.auctionprovide-wrapper {
+    padding: 85px 0 80px 0;
+}
+
+.auctionprovide-box .head-four {
+    color: #000000;
+    font-family: helvetica-bold;
+    margin-top: 40px;
+}
+
+.auctionprovide-box .head-two {
+    margin-top: 25px;
+}
+
+.auctionprovide-social a {
+    display: block;
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.auctionprovide-social a i {
+    font-size: 20px;
+    width: 20px;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.upcoming-truck-box h5 {
+    font-family: helvetica-bold;
+    font-size: 19px;
+}
+
+.auctionprovide-table table {
+    min-width: 1145px;
+}
+
+.auction-img {
+    border-radius: 30px;
+}
+
+.auctionprovide-content p span {
+    color: #989898;
+}
+
+.auctionprovide-content h3 {
+    font-size: 20px;
+    margin-top: 5px;
+    font-family: helvetica-bold;
+}
+
+.auctionprovide-head {
+    font-size: 31px;
+    color: #000000;
+    font-family: helvetica-bold;
+}
+
+.video-icon {
+    width: 75px;
+    height: 45px;
+    border: 2px solid #000000;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #000000;
+    font-size: 20px;
+    border-radius: 30px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+
+.video-icon:hover {
+    color: #000000;
+}
+
+.auctionprovide-btn {
+    height: 40px;
+    padding: 0 40px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #000000;
+    font-family: helvetica-regular;
+    border-radius: 30px;
+}
+
+.auctionprovide-btn::before {
+    border-radius: 30px;
+}
+
+.Locat-text {
+    margin-left: 30px;
+}
+
+.auctionprovide-table .table td,
+.auctionprovide-table .table th {
+    padding: 15px;
+    vertical-align: middle;
+    border-top: 1px solid #dedada;
+    border-bottom: 1px solid #dedada;
+}
+
+
+/*======================
+   21. return top area start
+========================*/
+
+.back-to-top {
+    font-size: 12px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 27px;
+    z-index: 999;
+    border-radius: 50%;
+    background: #ffc222;
+    color: #ffffff;
+}
+
+.back-to-top:hover {
+    color: #ffffff;
+}
